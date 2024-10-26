@@ -3,17 +3,23 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-    <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 Enhanced Next.js Template. All rights reserved.</p>
-    <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-      <Link className="text-xs hover:underline underline-offset-4" href="#">
-        Terms of Service
-      </Link>
-      <Link className="text-xs hover:underline underline-offset-4" href="#">
-        Privacy
-      </Link>
-    </nav>
-  </footer>
+    <footer className="border-t border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+          <div className="container flex flex-col gap-2 px-4 py-5 text-center sm:flex-row sm:justify-between sm:text-left">
+            <p className="text-sm font-mono text-gray-500 dark:text-gray-400">
+              Built with Next.js
+            </p>
+            <nav className="flex justify-center gap-4 sm:justify-end">
+              <Link 
+                href="https://github.com/yourusername/next-template"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-mono text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+              >
+                Source Code
+              </Link>
+            </nav>
+          </div>
+        </footer>
   )
 }
 

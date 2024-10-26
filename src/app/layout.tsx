@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { NextUIProvider } from "@nextui-org/react";
+import {ThemeProvider as NextThemesProvider} from "next-themes";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -25,11 +26,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="scrollbar-hide">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextUIProvider>{children}</NextUIProvider>
+        <NextUIProvider>
+          <NextThemesProvider 
+            attribute="class" 
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange>{children}
+            </NextThemesProvider>
+            </NextUIProvider>
       </body>
     </html>
   );

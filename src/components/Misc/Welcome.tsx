@@ -1,131 +1,177 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Code, Zap, FileStack, Database, Lock, Palette, Proportions } from 'lucide-react'
-import Layout from "../Layout/Layout"
+import React from 'react';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { 
+  Github,
+  FileText,
+  Terminal,
+  PackageOpen,
+  Boxes,
+  Coffee
+} from 'lucide-react';
+import Layout from "../Layout/Layout";
 
 export default function Welcome() {
   return (
-    <Layout className="flex flex-col min-h-screen">
+    <Layout className="flex flex-col min-h-screen bg-gray-50 dark:bg-gray-900">
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+        {/* Simple Header */}
+        <section className="w-full py-12 md:py-16">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="flex flex-col items-start space-y-4">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Enhanced Next.js Template
+                <h1 className="text-3xl font-mono font-medium tracking-tight sm:text-4xl md:text-5xl">
+                  next-template
                 </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
-                  A powerful, opinionated starting point for your Next.js projects with advanced features and integrations.
+                <p className="text-lg text-gray-600 dark:text-gray-400 font-mono">
+                  ./src → Your next project
                 </p>
               </div>
-              <div className="space-x-4">
-                <Button>
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-                <Button variant="outline">Learn More</Button>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12">Key Features</h2>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <Card>
-                <CardHeader>
-                  <FileStack className="h-8 w-8 mb-2" />
-                  <CardTitle>Opinionated File Structure</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>Well-organized project structure for scalability and maintainability.</CardDescription>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <Palette className="h-8 w-8 mb-2" />
-                  <CardTitle>UI Component Libraries</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>Integrated shadcn/ui, NextUI, and Magic UI for beautiful, consistent designs.</CardDescription>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <Lock className="h-8 w-8 mb-2" />
-                  <CardTitle>Server-Side Auth</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>Secure authentication system using server-side App Router for enhanced security.</CardDescription>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <Database className="h-8 w-8 mb-2" />
-                  <CardTitle>Database Integration</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>Pre-configured database setup for efficient data management and storage.</CardDescription>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <Proportions className="h-8 w-8 mb-2" />
-                  <CardTitle>Base Layout Setup</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>Ready-to-use layout components for consistent page structure across your app.</CardDescription>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <Zap className="h-8 w-8 mb-2" />
-                  <CardTitle>Performance Optimized</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>Built-in optimizations for fast loading and smooth user experiences.</CardDescription>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-              <div className="space-y-4">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Why Choose Our Template?</h2>
-                <p className="text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Our enhanced Next.js template provides a robust foundation for your web applications, combining the latest technologies and best practices to accelerate your development process.
-                </p>
-                <ul className="grid gap-2 py-4">
-                  <li className="flex items-center gap-2">
-                    <ArrowRight className="h-4 w-4" />
-                    <span>Faster development with pre-configured tools and libraries</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <ArrowRight className="h-4 w-4" />
-                    <span>Consistent design with integrated UI component libraries</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <ArrowRight className="h-4 w-4" />
-                    <span>Secure and efficient server-side authentication and data management</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <ArrowRight className="h-4 w-4" />
-                    <span>Scalable architecture for growing projects</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="flex items-center justify-center">
-                <div className="rounded-lg bg-gray-100 dark:bg-gray-800 p-8">
-                  <Code className="h-32 w-32 text-primary" />
+              <div className="flex gap-4 font-mono text-sm">
+                <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-md">
+                  <Terminal className="h-4 w-4" />
+                  npx create-next-app -e https://github.com/abhisheksharm-3/nextjs-template
                 </div>
               </div>
+              <div className="flex gap-3 pt-4">
+                <Button variant="outline" size="sm" className="gap-2">
+                  <Github className="h-4 w-4" />
+                  Clone Repository
+                </Button>
+                <Button variant="ghost" size="sm" className="gap-2">
+                  <FileText className="h-4 w-4" />
+                  README.md
+                </Button>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* Tech Stack */}
+        <section className="w-full py-8">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <Card className="border-none bg-white/50 dark:bg-gray-800/50">
+                <CardHeader>
+                  <CardTitle className="font-mono text-base font-medium">
+                    <div className="flex items-center gap-2">
+                      <PackageOpen className="h-4 w-4" />
+                      Dependencies
+                    </div>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="font-mono text-sm space-y-1 text-gray-600 dark:text-gray-400">
+                  <div>next 15.x</div>
+                  <div>react 18.x</div>
+                  <div>typescript 5.x</div>
+                  <div>tailwind 3.x</div>
+                  <div>shadcn/ui</div>
+                  <div>nextui</div>
+                  <div>appwrite</div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-none bg-white/50 dark:bg-gray-800/50">
+                <CardHeader>
+                  <CardTitle className="font-mono text-base font-medium">
+                    <div className="flex items-center gap-2">
+                      <Boxes className="h-4 w-4" />
+                      Project Structure
+                    </div>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="font-mono text-sm space-y-1 text-gray-600 dark:text-gray-400">
+                  <div>├── app/</div>
+                  <div>├── components/</div>
+                  <div>├── lib/</div>
+                  <div>├── hooks/</div>
+                  <div>├── services/</div>
+                  <div>└── middleware.ts</div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-none bg-white/50 dark:bg-gray-800/50">
+                <CardHeader>
+                  <CardTitle className="font-mono text-base font-medium">
+                    <div className="flex items-center gap-2">
+                      <Coffee className="h-4 w-4" />
+                      Features
+                    </div>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="font-mono text-sm space-y-1 text-gray-600 dark:text-gray-400">
+                  <div>✓ App Router</div>
+                  <div>✓ TypeScript</div>
+                  <div>✓ Tailwind CSS</div>
+                  <div>✓ Appwrite Setup</div>
+                  <div>✓ shadcn/ui & nextui</div>
+                  <div>✓ ESLint Config</div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* Quick Start */}
+        <section className="w-full py-8">
+          <div className="container px-4 md:px-6">
+            <Card className="border-none bg-white/50 dark:bg-gray-800/50">
+              <CardHeader>
+                <CardTitle className="font-mono text-base font-medium">Quick Start</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="font-mono text-sm space-y-2">
+                  <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-md">
+                    <p className="text-gray-600 dark:text-gray-400"># Clone the repository</p>
+                    <p>https://github.com/abhisheksharm-3/nextjs-template</p>
+                  </div>
+                  <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-md">
+                    <p className="text-gray-600 dark:text-gray-400"># Install dependencies</p>
+                    <p>bun install</p>
+                  </div>
+                  <div className="bg-gray-100 dark:bg-gray-800 p-3 rounded-md">
+                    <p className="text-gray-600 dark:text-gray-400"># Start development server</p>
+                    <p>bun dev</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* File Tree Preview */}
+        <section className="w-full py-8">
+          <div className="container px-4 md:px-6">
+            <Card className="border-none bg-white/50 dark:bg-gray-800/50">
+              <CardHeader>
+                <CardTitle className="font-mono text-base font-medium">File Structure</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <pre className="font-mono text-sm text-gray-600 dark:text-gray-400">
+{`next-template/
+├── app/
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── providers.tsx
+├── components/
+│   ├── ui/
+│   └── shared/
+├── lib/
+│   └── utils.ts
+├── styles/
+│   └── globals.css
+├── types/
+│   └── index.d.ts
+├── next.config.js
+├── tailwind.config.js
+├── tsconfig.json
+└── package.json`}
+                </pre>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </main>
-
     </Layout>
-  )
+  );
 }

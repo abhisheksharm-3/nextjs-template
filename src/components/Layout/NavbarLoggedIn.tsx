@@ -1,28 +1,28 @@
 import { Code } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+import { Button } from '../ui/button';
+import { ModeToggle } from '../Utils/ModeToggle';
 
 const NavbarLoggedIn = () => {
   return (
-    <header className="px-4 lg:px-6 h-14 flex items-center">
-    <Link className="flex items-center justify-center" href="#">
-      <span className="sr-only">Enhanced Next.js Template</span>
-      <Code className="h-6 w-6" />
-      <span className="ml-2 text-lg font-semibold">Enhanced Next.js Template</span>
-    </Link>
-    <nav className="ml-auto flex gap-4 sm:gap-6">
-      <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-        Features
+    <header className="px-4 lg:px-6 h-14 flex items-center border-b border-gray-200 dark:border-gray-800 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
+      <Link 
+        className="flex items-center justify-center font-mono" 
+        href="/dashboard"
+      >
+        <Code className="h-5 w-5" />
+        <span className="ml-2 text-sm font-medium">next-template</span>
       </Link>
-      <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-        Documentation
-      </Link>
-      <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-        GitHub
-      </Link>
-    </nav>
-  </header>
-  )
-}
+      
+      <nav className="ml-auto flex items-center gap-4">
+      <ModeToggle />
+        <Button variant="ghost" size="sm" className="font-mono text-xs">
+          Sign Out
+        </Button>
+      </nav>
+    </header>
+  );
+};
 
 export default NavbarLoggedIn
