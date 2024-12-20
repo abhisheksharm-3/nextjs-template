@@ -61,13 +61,13 @@ export default function Welcome() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="font-mono text-sm space-y-1 text-gray-600 dark:text-gray-400">
-                  <div>next 15.x</div>
-                  <div>react 18.x</div>
+                <div>next 15.1.2</div>
+                  <div>react 19.x</div>
                   <div>typescript 5.x</div>
-                  <div>tailwind 3.x</div>
-                  <div>shadcn/ui</div>
-                  <div>nextui</div>
-                  <div>appwrite</div>
+                  <div>tailwind 3.4.17</div>
+                  <div>nextui 2.6.8</div>
+                  <div>framer-motion 11.15.0</div>
+                  <div>node-appwrite 14.1.0</div>
                 </CardContent>
               </Card>
 
